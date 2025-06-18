@@ -26,12 +26,12 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests tqdm
 
       - name: Build live-events playlist
         run: |
           cd Events
-          python events.py       # add -v if you need verbose logs
+          python events.py -v       # add -v if you need verbose logs
 
       - name: Commit and push changes
         run: |
